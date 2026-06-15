@@ -1,6 +1,6 @@
 const ingresos = [
-    new Ingreso("Salario", 2100.00),
-    new Ingreso("Venta Coche", 1500)
+    new Ingreso("Sueldo", 2100.00),
+    new Ingreso("Venta Auto", 1500)
 ];
 
 const egresos = [
@@ -31,8 +31,16 @@ let totalEgresos = () =>{
 let cargarCabecero = () => {
     let presupuesto = totalIngresos() - totalEgresos();
     let porcentajeEgreso = totalEgresos()/totalIngresos();
-    document.getElementById("presupuesto").innerHTML = presupuesto;
-    document.getElementById("porcentaje").innerHTML = porcentajeEgreso;
-    document.getElementById("ingresos").innerHTML = totalIngresos();
-    document.getElementById("egresos").innerHTML = totalEgresos();
+    document.getElementById("presupuesto").innerHTML = formatoMoneda(presupuesto);
+    document.getElementById("porcentaje").innerHTML = formatoPorcentaje(porcentajeEgreso);
+    document.getElementById("ingresos").innerHTML = formatoMoneda(totalIngresos());
+    document.getElementById("egresos").innerHTML = formatoMoneda(totalEgresos());
+}
+
+const formatoMoneda = (valor) => {
+    return valor.toLocaleString("en-US", {style:"currency", currency:"USD", minimumFractionDigits:2});
+}
+
+const formatoPorcentaje = (valor) => {
+    return valor.toLocaleString("en-US", {style:"percent", minimumFractionDigits:2});
 }
