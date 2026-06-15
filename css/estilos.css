@@ -50,15 +50,17 @@ body {
     font-size: 20px;
     text-align: center;
     margin-bottom: 10px;
-    font-weight: 300;
+    font-weight: 400;
+    text-shadow: 1px 1px #555;
 }
 
 .presupuesto_valor {
-    font-weight: 300;
+    font-weight: 400;
     font-size: 46px;
     text-align: center;
     margin-bottom: 25px;
     letter-spacing: 2px;
+    text-shadow: 1px 1px #555;
 }
 
 .presupuesto_ingreso,
